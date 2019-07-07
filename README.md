@@ -29,7 +29,7 @@ The soul of this pattern (and all clean code) begins with a strong respect for t
 ##### O (Open-closed Principle)
 > "Software entities ... should be open for extension, but closed for modification."
 
-A quick glance at the architecture diagram will reveal a clean chain of extension in all of the layers (controllers, state, views). Dependencies are required by most of these classes and therefore are accessible. However no extension of an end-use is allowed (extending HomeController).
+A quick glance at the architecture diagram will reveal a clean chain of extension in all of the layers (controllers, state, views). Dependencies are required by most of these classes and therefore are accessible. However no modification of an general-use is allowed (modifying the base Controller).
 ##### L (Liskov Substitution Principle)
 > "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
 
@@ -44,4 +44,4 @@ The spirit of the ISP states that an end-use-case should not need to depend on g
 While this applies generally more towards business-logic, (repository layer interface instead of access on implementation specific like Mongo or Postgres). If you wanted to, you could have your controllers be interfaces with this pattern.  However, in my humble opinion I think that ventures a bit into the realm of over-engineering.
 
 #### References
-[SOLID](https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
+[[SOLID](https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
