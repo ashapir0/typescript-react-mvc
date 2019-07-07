@@ -1,0 +1,19 @@
+{
+  "name": "typescript-react-mvc",
+  "version": "1.0.0",
+  "description": "a highly explicit mvc implementation with dependency injection in react",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashapir0/typescript-react-mvc.git"
+  },
+  "author": "Aaron Shapiro",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ashapir0/typescript-react-mvc/issues"
+  },
+  "homepage": "https://github.com/ashapir0/typescript-react-mvc#readme"
+}
