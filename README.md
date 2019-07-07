@@ -24,9 +24,11 @@ The use of registries and dependency injection
 #### SOLID Adherance
 ##### S (Single Responsibility Principle)
 > "A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class."
+
 The soul of this pattern (and all clean code) begins with a strong respect for this principle. A class (and functions) should have one and only one purpose (and should have only one reason to change). This is why we do not perform business logic in our state, or make external calls in our controllers. If a backend endpoint was to change, we only have to change our service layer.
 ##### O (Open-closed Principle)
 > "Software entities ... should be open for extension, but closed for modification."
+
 A quick glance at the architecture diagram will reveal a clean chain of extension in all of the layers (controllers, state, views). Dependencies are required by most of these classes and therefore are accessible. However no extension of an end-use is allowed (extending HomeController).
 ##### L (Liskov Substitution Principle)
 > "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
