@@ -18,7 +18,11 @@ Generally speaking all high-level views (pages, sub-views) have two siblings _a 
     └── HomeView.tsx
 ```
 #### Controllers
-Controllers handle all the business logic in your application (validating forms, fetching backend data, pulling/pushing data from stores, etc.).
+Controllers handle all the business logic in your application (validating forms, fetching backend data, pulling/pushing data from stores, etc.). It's generally good practice to have utility-layers for reusable functionality.  Clean Code holds that functions should be meaningfully named and should do one and one thing only. Just because you have a high-level handler, do not make the pitfall of adding too much functionality in the high-level function [example](https://github.com/ashapir0/typescript-react-mvc/blob/master/src/controllers/HomeController.ts). In this example, you could easily write all of this logic in the high-level ```fetchStories``` function.  However, separating them out (and eventually moving them to utility layers) is good practice.
+#### States
+States are pure value-stores and should never encapsulate any sort of mutation logic. Computed values are still a passthrough representation of the state and are therefore allowed.
+#### Views
+Views invoke high-level controller functions and access the state to display values to the user. No business logic should exist in views. Lifecycle events or otherwise (click, typing, etc.) can invoke the controller.
 #### Registries / DI
 The use of registries and dependency injection aides greatly in scaling while keeping your code explicit and modular.
 ### SOLID Adherance
