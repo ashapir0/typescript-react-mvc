@@ -32,3 +32,16 @@ The soul of this pattern (and all clean code) begins with a strong respect for t
 A quick glance at the architecture diagram will reveal a clean chain of extension in all of the layers (controllers, state, views). Dependencies are required by most of these classes and therefore are accessible. However no extension of an end-use is allowed (extending HomeController).
 ##### L (Liskov Substitution Principle)
 > "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
+
+Liskov does not really apply to the general-case implemented here as its geared more towards entities.
+##### I (Interface Segregation Principle)
+> "Many client-specific interfaces are better than one general-purpose interface"
+
+The spirit of the ISP states that an end-use-case should not need to depend on general interface methods. There are no built-in methods in this pattern except for React's render method (which can be subsituted with another framework). Therefore, this pattern adheres to ISP.
+##### D (Dependency Inversion Principle)
+> "One should "depend upon abstractions, \[not\] concretions"
+
+While this applies generally more towards business-logic, (repository layer interface instead of access on implementation specific like Mongo or Postgres). If you wanted to, you could have your controllers be interfaces with this pattern.  However, in my humble opinion I think that ventures a bit into the realm of over-engineering.
+
+#### References
+[[SOLID]] (https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
