@@ -17,8 +17,9 @@ export class HomeController extends Controller {
 
   private getPagedStoryIdentifiers(storyIdentifiers: Array<number>, pageNumber: number): Array<number> {
     const { storiesPerPage } = this.appConfig.home;
-    const lowerIdx = pageNumber * storiesPerPage;
-    const upperIdx = (pageNumber + 1) * storiesPerPage;
+    const lowerIdx = Number(pageNumber) * storiesPerPage;
+    const upperIdx = lowerIdx + storiesPerPage;
+    console.log(lowerIdx, upperIdx);
     return storyIdentifiers.slice(lowerIdx, upperIdx);
   }
 
@@ -36,6 +37,7 @@ export class HomeController extends Controller {
       
       /* Get paged story identifiers e.g. (page 2: [25...50]) */
       const pagedStoryIdentifiers = this.getPagedStoryIdentifiers(storyIdentifiers, pageNumber);
+      console.log(pagedStoryIdentifiers);
 
       const storyItems = await this.fetchStoryItems(pagedStoryIdentifiers);
       homeState.updateStoryItems(storyItems);

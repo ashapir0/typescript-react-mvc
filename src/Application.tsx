@@ -9,6 +9,7 @@ import { StateRegistry } from "./states/StateRegistry";
 import { ServiceRegistry } from "./services/ServiceRegistry";
 import { ControllerRegistry } from "./controllers/ControllerRegistry";
 import { DevelopmentConfiguration } from "./definitions/config/DevelopmentConfiguration";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 export class Application extends React.Component {
 
@@ -34,6 +35,11 @@ export class Application extends React.Component {
     return (
       <Provider viewDependencies={this.viewDependencies}>
         <HashRouter>
+          <AppBar position="static" color="primary">
+            <Toolbar>
+              <Typography variant="h6" color="inherit">Hacker News</Typography>
+            </Toolbar>
+          </AppBar>
           <Route exact path="/:pageNumber?" component={HomeView}/>
         </HashRouter>
       </Provider>
