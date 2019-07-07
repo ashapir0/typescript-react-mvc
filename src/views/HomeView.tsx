@@ -1,7 +1,9 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
+import { Container, List } from "@material-ui/core";
 
 import { HomeViewProps } from "../definitions/props/ViewProps";
+import { HomeStoryListItem } from "../components/lists/HomeStoryListItem";
 
 @inject("viewDependencies")
 @observer
@@ -14,8 +16,13 @@ export class HomeView extends React.Component<HomeViewProps> {
 
   render(): React.ReactNode {
     const { homeState } = this.props.viewDependencies.stateRegistry;
+    const listItems = homeState.storyItems.map(story => <HomeStoryListItem story={story}/>);
     return (
-      <div>{JSON.stringify(homeState.storyItems)}</div>
+      <Container maxWidth="md">
+        <List>
+          { listItems }
+        </List>
+      </Container>
     )
   }
 
