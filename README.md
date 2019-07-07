@@ -20,7 +20,7 @@ Generally speaking all high-level views (pages, sub-views) have two siblings _a 
 #### Controllers
 Controllers handle all the business logic in your application (validating forms, fetching backend data, pulling/pushing data from stores, etc.).
 #### Registries / DI
-The use of registries and dependency injection 
+The use of registries and dependency injection aides greatly in scaling while keeping your code explicit and modular.
 ### SOLID Adherance
 ##### S (Single Responsibility Principle)
 > "A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class."
@@ -44,4 +44,4 @@ The spirit of the ISP states that an end-use-case should not need to depend on g
 While this applies generally more towards business-logic, (repository layer interface instead of access on implementation specific like Mongo or Postgres). If you wanted to, you could have your controllers be interfaces with this pattern.  However, in my humble opinion I think that ventures a bit into the realm of over-engineering.
 
 #### References
-[[SOLID](https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
+[SOLID](https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
