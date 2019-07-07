@@ -44,4 +44,4 @@ The spirit of the ISP states that an end-use-case should not need to depend on g
 While this applies generally more towards business-logic, (repository layer interface instead of access on implementation specific like Mongo or Postgres). If you wanted to, you could have your controllers be interfaces with this pattern.  However, in my humble opinion I think that ventures a bit into the realm of over-engineering.
 
 #### References
-[[SOLID]] (https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
+[SOLID](https://en.wikipedia.org/w/index.php?title=SOLID&oldid=899311582})
